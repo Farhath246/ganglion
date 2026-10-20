@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+venv/
+.venv/
+
+# Runtime state written by the modules (default paths)
+hebbian.json
+basal_ganglia.json
+mem.json
+audit.log
+*.log
+*.archive
+
+# Local secrets / environment
+.env
+
+# Nested git clone: Jailbreaks is its own repo with its own origin
+# (https://github.com/tuxsharxsec/Jailbreaks.git) - remove this line
+# only if you want the corpus inside this repo instead
+Jailbreaks/
