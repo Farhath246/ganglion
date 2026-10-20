@@ -1,5 +1,5 @@
 """
-Test suite for Ganglion. Run with:  python3 test_ganglion.py
+Test suite for the brain stack. Run with:  python3 tests/test_ganglion.py
 
 Uses mocks for perception/action, so no browser, display, or network is
 needed. Every test writes into its own temp directory.
@@ -11,28 +11,31 @@ import sys
 import tempfile
 import traceback
 
-from audit_log import AuditLog
-from basal_ganglia import BasalGanglia
-from brain import Brain
-from affect import Affect
-from attention import Attention
-from forward_model import ForwardModel
-from habituation import HabituationFilter
-from hebbian import HebbianAssociator
-from hemispheres import HemisphereConsensus
-from homeostasis import Homeostasis
-from language import Production, ComprehensionFailure, Comprehension, ProductionFailure
-from maintenance import Maintenance
-from memory import Memory
-from meninges import Meninges
-from predictive_perception import PredictiveLayer
-from reflex import EmergencyStop
-from replay import ReplayConsolidator
-from safety_governor import SafetyGovernor
-from self_model import SelfModel
-from working_memory import WorkingMemory, LookaheadConcern
-from workspace import GlobalWorkspace
-from world_model import WorldModel
+# So the suite runs from any directory.
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from ganglion.audit_log import AuditLog
+from ganglion.basal_ganglia import BasalGanglia
+from ganglion.brain import Brain
+from ganglion.affect import Affect
+from ganglion.attention import Attention
+from ganglion.forward_model import ForwardModel
+from ganglion.habituation import HabituationFilter
+from ganglion.hebbian import HebbianAssociator
+from ganglion.hemispheres import HemisphereConsensus
+from ganglion.homeostasis import Homeostasis
+from ganglion.language import Production, ComprehensionFailure, Comprehension, ProductionFailure
+from ganglion.maintenance import Maintenance
+from ganglion.memory import Memory
+from ganglion.meninges import Meninges
+from ganglion.predictive_perception import PredictiveLayer
+from ganglion.reflex import EmergencyStop
+from ganglion.replay import ReplayConsolidator
+from ganglion.safety_governor import SafetyGovernor
+from ganglion.self_model import SelfModel
+from ganglion.working_memory import WorkingMemory, LookaheadConcern
+from ganglion.workspace import GlobalWorkspace
+from ganglion.world_model import WorldModel
 
 
 # ---------------------------------------------------------------- mocks

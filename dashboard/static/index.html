@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ganglion</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header>
+  <h1>Ganglion</h1>
+  <div class="controls">
+    <select id="scenario" title="Scenario"></select>
+    <button id="step" class="primary">Step</button>
+    <button id="run">Run &times;5</button>
+    <button id="play">Play</button>
+    <button id="reset">Reset</button>
+    <label class="check"><input type="checkbox" id="habituation"> habituation</label>
+    <button id="emergency">Trip stop</button>
+    <span class="cycle">cycle <b id="cycle">0</b></span>
+  </div>
+</header>
+
+<p id="scenario-note" class="note"></p>
+<p id="outcome" class="outcome">Ready.</p>
+
+<main>
+  <section class="col">
+    <h2>Page</h2>
+    <div id="page" class="panel page"></div>
+
+    <details class="panel custom">
+      <summary>Custom page</summary>
+      <label>Page text
+        <textarea id="custom-text" rows="4" placeholder="Paste any page text here..."></textarea>
+      </label>
+      <label>Elements, one per line
+        <textarea id="custom-elements" rows="3" placeholder="Continue&#10;button|Delete account"></textarea>
+      </label>
+      <p class="hint">The first element is the safe action. Everything after it fails when clicked.</p>
+      <button id="custom-load">Load custom page</button>
+    </details>
+
+    <h2>Actions</h2>
+    <div id="actions" class="panel list"></div>
+  </section>
+
+  <section class="col">
+    <h2>Signals</h2>
+    <div id="signals" class="panel"></div>
+
+    <h2>Plan</h2>
+    <div id="plan" class="panel"></div>
+
+    <h2>Attention</h2>
+    <div id="attention" class="panel list"></div>
+  </section>
+
+  <section class="col">
+    <h2>Learning</h2>
+    <div id="learning" class="panel"></div>
+
+    <h2>Memory</h2>
+    <div id="memory" class="panel"></div>
+
+    <h2>Workspace</h2>
+    <div id="workspace" class="panel"></div>
+
+    <h2>Audit</h2>
+    <div id="audit" class="panel list"></div>
+  </section>
+</main>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

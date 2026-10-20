@@ -27,20 +27,20 @@ experimenting with several candidate strategies wants to keep trying
 even when nothing visibly changed.
 """
 
-from neuron import SignalPayload, Neuron
-from safety import RateLimiter, guarded
-from safety_governor import SafetyGovernor, SafetyViolation
-from world_model import WorldModel
-from self_model import SelfModel
-from audit_log import AuditLog
-from basal_ganglia import BasalGanglia, Candidate
-from hemispheres import HemisphereConsensus
-from working_memory import WorkingMemory, LookaheadConcern
-from language import Production, ProductionFailure
-from meninges import Meninges
-from reflex import EmergencyStop
-from homeostasis import Homeostasis
-from maintenance import Maintenance
+from .neuron import SignalPayload, Neuron
+from .safety import RateLimiter, guarded
+from .safety_governor import SafetyGovernor, SafetyViolation
+from .world_model import WorldModel
+from .self_model import SelfModel
+from .audit_log import AuditLog
+from .basal_ganglia import BasalGanglia, Candidate
+from .hemispheres import HemisphereConsensus
+from .working_memory import WorkingMemory, LookaheadConcern
+from .language import Production, ProductionFailure
+from .meninges import Meninges
+from .reflex import EmergencyStop
+from .homeostasis import Homeostasis
+from .maintenance import Maintenance
 
 
 class Brain:

@@ -34,8 +34,11 @@ JAILBREAK_PATTERNS = [
         r"\b(?:don'?t|do not|never) deny\b|denial, refusal|cannot say 'sorry'", re.I)),
     ("encoded_payload", re.compile(
         r"[A-Za-z0-9+/]{40,}={0,2}|[\U0001d400-\U0001d7ff]{8,}")),
+    ("instruction_override", re.compile(
+        r"\bignore(?:\s+\w+){0,3}\s+instructions\b|"
+        r"\bdisregard(?:\s+\w+){0,3}\s+(?:instructions?|rules?)\b", re.I)),
+    ("system_prefix", re.compile(r"^\s*system\s*:", re.I | re.M)),
 ]
-
 
 class Attention:
     def __init__(self, capacity: int = 5):
@@ -46,6 +49,11 @@ class Attention:
 
         seen = set()
         texts = list(world_model.hazards) + list(world_model.known_elements.values())
+        # The body of the page is a screen surface too: an injection
+        # does not have to sit inside a tagged element to land.
+        body = getattr(world_model, "text", "")
+        if isinstance(body, str):
+            texts.append(body)
         for text in texts:
             if not isinstance(text, str) or text in seen:
                 continue
